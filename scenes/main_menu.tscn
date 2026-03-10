@@ -1,0 +1,330 @@
+[gd_scene format=3 uid="uid://bkom5pinox7xa"]
+
+[ext_resource type="Script" uid="uid://tvoslkn58f3h" path="res://scripts/ui/main_menu_ui.gd" id="1_bqqt6"]
+[ext_resource type="Script" uid="uid://m24xubxho2vu" path="res://scripts/ui/lobby_ui.gd" id="2_wu84c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vue75"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_l6cm7"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_ekxnf"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_bqqt6"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ln24"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_rtw2f"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_oa1go"]
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_tbmy8"]
+font_size = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_jk1qb"]
+font_size = 20
+
+[node name="MainMenu" type="Control" unique_id=578493088]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_bqqt6")
+
+[node name="Canvas" type="CanvasLayer" parent="." unique_id=1941052854]
+
+[node name="MainMenuPanel" type="Control" parent="Canvas" unique_id=1886214356]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Control" parent="Canvas/MainMenuPanel" unique_id=306080291]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 196.0
+grow_horizontal = 2
+
+[node name="TitleText" type="Label" parent="Canvas/MainMenuPanel/Header" unique_id=1868614441]
+layout_mode = 0
+offset_left = 718.0
+offset_top = 45.0
+offset_right = 1197.0
+offset_bottom = 114.0
+text = "2D Top-Down Game"
+label_settings = SubResource("LabelSettings_vue75")
+horizontal_alignment = 1
+
+[node name="SubtitleText" type="Label" parent="Canvas/MainMenuPanel/Header" unique_id=238521004]
+layout_mode = 0
+offset_left = 847.0
+offset_top = 135.0
+offset_right = 1069.0
+offset_bottom = 163.0
+text = "Version: Alpha v1.0.0"
+label_settings = SubResource("LabelSettings_l6cm7")
+horizontal_alignment = 1
+
+[node name="Body" type="Control" parent="Canvas/MainMenuPanel" unique_id=1921068590]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 215.0
+offset_bottom = -374.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NickNameFields" type="Control" parent="Canvas/MainMenuPanel/Body" unique_id=1917333987]
+anchors_preset = 0
+offset_left = 768.0
+offset_top = 175.0
+offset_right = 1147.0
+offset_bottom = 239.0
+
+[node name="NicknameLabel" type="Label" parent="Canvas/MainMenuPanel/Body/NickNameFields" unique_id=2123734926]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 8.0
+offset_right = 148.0
+offset_bottom = 43.0
+text = "Nickname: "
+label_settings = SubResource("LabelSettings_ekxnf")
+
+[node name="NicknameInput" type="LineEdit" parent="Canvas/MainMenuPanel/Body/NickNameFields" unique_id=738101107]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 148.0
+offset_top = 12.0
+offset_right = 371.0
+offset_bottom = 43.0
+
+[node name="PlayOnlineLabel" type="Label" parent="Canvas/MainMenuPanel/Body" unique_id=1609875542]
+layout_mode = 0
+offset_left = 782.0
+offset_top = 297.0
+offset_right = 918.0
+offset_bottom = 332.0
+text = "Play Online"
+label_settings = SubResource("LabelSettings_bqqt6")
+
+[node name="IP" type="Control" parent="Canvas/MainMenuPanel/Body" unique_id=1804108798]
+anchors_preset = 0
+offset_left = 755.0
+offset_top = 371.0
+offset_right = 1050.0
+offset_bottom = 437.0
+
+[node name="IPLabel" type="Label" parent="Canvas/MainMenuPanel/Body/IP" unique_id=1921945816]
+layout_mode = 0
+offset_left = 52.0
+offset_top = -2.0
+offset_right = 92.0
+offset_bottom = 33.0
+text = "IP:"
+label_settings = SubResource("LabelSettings_wu84c")
+
+[node name="IPInput" type="LineEdit" parent="Canvas/MainMenuPanel/Body/IP" unique_id=1082527456]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 102.0
+offset_top = 1.0
+offset_right = 377.0
+offset_bottom = 32.0
+
+[node name="Port" type="Control" parent="Canvas/MainMenuPanel/Body" unique_id=1755281664]
+anchors_preset = 0
+offset_left = 800.0
+offset_top = 429.0
+offset_right = 1138.0
+offset_bottom = 472.0
+
+[node name="PortLabel" type="Label" parent="Canvas/MainMenuPanel/Body/Port" unique_id=1830244725]
+layout_mode = 0
+offset_left = 9.0
+offset_right = 67.0
+offset_bottom = 35.0
+text = "Port:"
+label_settings = SubResource("LabelSettings_8ln24")
+
+[node name="PortInput" type="LineEdit" parent="Canvas/MainMenuPanel/Body/Port" unique_id=2072665226]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 91.0
+offset_top = 3.0
+offset_right = 194.0
+offset_bottom = 34.0
+
+[node name="SrvButtons" type="Control" parent="Canvas/MainMenuPanel/Body" unique_id=1013418590]
+anchors_preset = 0
+offset_left = 779.0
+offset_top = 509.0
+offset_right = 1221.0
+offset_bottom = 589.0
+
+[node name="HostButton" type="Button" parent="Canvas/MainMenuPanel/Body/SrvButtons" unique_id=1418031353]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 33.0
+offset_top = 20.0
+offset_right = 203.0
+offset_bottom = 51.0
+text = "HOST
+"
+
+[node name="JoinButton" type="Button" parent="Canvas/MainMenuPanel/Body/SrvButtons" unique_id=552913620]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 248.0
+offset_top = 20.0
+offset_right = 418.0
+offset_bottom = 51.0
+text = "JOIN"
+
+[node name="StatusText" type="Label" parent="Canvas/MainMenuPanel/Body" unique_id=891990649]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 775.0
+offset_top = 602.0
+offset_right = 865.0
+offset_bottom = 637.0
+text = "Status: "
+label_settings = SubResource("LabelSettings_rtw2f")
+
+[node name="Footer" type="Control" parent="Canvas/MainMenuPanel" unique_id=1452550962]
+anchors_preset = 0
+offset_left = 862.0
+offset_top = 938.0
+offset_right = 1169.0
+offset_bottom = 1077.0
+
+[node name="QuitButton" type="Button" parent="Canvas/MainMenuPanel/Footer" unique_id=1481861086]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 81.0
+offset_top = 54.0
+offset_right = 231.0
+offset_bottom = 85.0
+text = "QUIT"
+
+[node name="LobbyPanel" type="Control" parent="Canvas" unique_id=2048762276]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_wu84c")
+
+[node name="Header" type="Control" parent="Canvas/LobbyPanel" unique_id=31741022]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 319.0
+grow_horizontal = 2
+
+[node name="LobbyTitleText" type="Label" parent="Canvas/LobbyPanel/Header" unique_id=119119475]
+layout_mode = 0
+offset_left = 827.0
+offset_top = 87.02
+offset_right = 1091.0
+offset_bottom = 156.01999
+text = "LOBBY"
+label_settings = SubResource("LabelSettings_oa1go")
+horizontal_alignment = 1
+
+[node name="InfoRow" type="HBoxContainer" parent="Canvas/LobbyPanel/Header" unique_id=1654014822]
+layout_mode = 0
+offset_left = 700.0
+offset_top = 169.0
+offset_right = 1209.0
+offset_bottom = 196.0
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="RoomLabel" type="Label" parent="Canvas/LobbyPanel/Header/InfoRow" unique_id=474715642]
+layout_mode = 2
+text = "Room: LAN"
+
+[node name="IPLabel" type="Label" parent="Canvas/LobbyPanel/Header/InfoRow" unique_id=359772758]
+layout_mode = 2
+text = "IP: 192.168.0.12"
+
+[node name="PortLabel" type="Label" parent="Canvas/LobbyPanel/Header/InfoRow" unique_id=1118879007]
+layout_mode = 2
+text = "Port: 7777"
+
+[node name="Body" type="Control" parent="Canvas/LobbyPanel" unique_id=4523342]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -961.0
+offset_top = -245.0
+offset_right = 959.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayersTitle" type="Label" parent="Canvas/LobbyPanel/Body" unique_id=911292314]
+layout_mode = 0
+offset_left = 779.0
+offset_top = 197.0
+offset_right = 970.0
+offset_bottom = 232.0
+text = "Players (max 4):"
+label_settings = SubResource("LabelSettings_tbmy8")
+
+[node name="PlayersList" type="Label" parent="Canvas/LobbyPanel/Body" unique_id=489627120]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 782.0
+offset_top = 259.0
+offset_right = 822.0
+offset_bottom = 380.0
+text = "1)
+2)
+3)
+4)"
+label_settings = SubResource("LabelSettings_jk1qb")
+
+[node name="Footer" type="Control" parent="Canvas/LobbyPanel" unique_id=1870600236]
+anchors_preset = 0
+offset_top = 685.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="StartMatchButton" type="Button" parent="Canvas/LobbyPanel/Footer" unique_id=1742694980]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 801.0
+offset_top = 28.0
+offset_right = 941.0
+offset_bottom = 59.0
+text = "Start Match"
+
+[node name="LeaveButton" type="Button" parent="Canvas/LobbyPanel/Footer" unique_id=546946286]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 995.0
+offset_top = 28.0
+offset_right = 1135.0
+offset_bottom = 59.0
+text = "Leave"

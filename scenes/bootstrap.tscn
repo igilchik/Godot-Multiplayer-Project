@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bbg25iv1ev6se"]
+
+[ext_resource type="Script" uid="uid://8v3jvw0qudr5" path="res://scripts/network_manager.gd" id="1_pslgh"]
+[ext_resource type="PackedScene" uid="uid://bkom5pinox7xa" path="res://scenes/main_menu.tscn" id="2_yg5h4"]
+
+[node name="Bootstrap" type="Node2D" unique_id=910121103]
+
+[node name="Network" type="Node2D" parent="." unique_id=1318960005]
+script = ExtResource("1_pslgh")
+
+[node name="MainMenu" parent="." unique_id=578493088 instance=ExtResource("2_yg5h4")]

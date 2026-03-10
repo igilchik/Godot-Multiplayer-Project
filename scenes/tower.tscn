@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b5d7l6pf5cgwf"]
+
+[ext_resource type="Texture2D" uid="uid://bpxa705t1cpg7" path="res://Sprites/World/tower.png" id="1_2x682"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2x682"]
+radius = 17.0
+height = 62.0
+
+[node name="Tower" type="Node2D" unique_id=1414159903]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1726788876]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1745278730]
+position = Vector2(6, 17)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_2x682")
+
+[node name="TowerTop" type="Sprite2D" parent="." unique_id=377905971]
+z_index = 10
+position = Vector2(-42, -78)
+texture = ExtResource("1_2x682")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 84, 78)
+
+[node name="TowerBottom" type="Sprite2D" parent="." unique_id=831577874]
+position = Vector2(-42, 0)
+texture = ExtResource("1_2x682")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 78, 84, 33)

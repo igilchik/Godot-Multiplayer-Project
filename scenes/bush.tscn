@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bjvoquhsi7bxh"]
+
+[ext_resource type="Texture2D" uid="uid://bww3u557o7kx4" path="res://Sprites/World/bush.png" id="1_lad4k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehqem"]
+size = Vector2(9, 3)
+
+[node name="Bush" type="Node2D" unique_id=566163866]
+
+[node name="Bush" type="StaticBody2D" parent="." unique_id=1465450959]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bush" unique_id=2116597455]
+position = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_ehqem")
+
+[node name="BushTop" type="Sprite2D" parent="." unique_id=781243528]
+z_index = 10
+position = Vector2(-9, -10)
+texture = ExtResource("1_lad4k")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 19, 10)
+
+[node name="BushDown" type="Sprite2D" parent="." unique_id=1823247536]
+position = Vector2(-9, 0)
+texture = ExtResource("1_lad4k")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 10, 19, 6)

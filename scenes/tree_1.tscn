@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://vxmfn35q3owq"]
+
+[ext_resource type="Texture2D" uid="uid://dp1uibh0pbjiv" path="res://Sprites/World/2tree.png" id="1_tem7l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tem7l"]
+radius = 3.0
+height = 10.0
+
+[node name="tree1" type="Node2D" unique_id=679459620]
+
+[node name="TrunkBody" type="StaticBody2D" parent="." unique_id=921828630]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrunkBody" unique_id=964734843]
+position = Vector2(0, 1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_tem7l")
+
+[node name="TopTree" type="Sprite2D" parent="." unique_id=23769632]
+z_index = 10
+position = Vector2(-14, -34)
+texture = ExtResource("1_tem7l")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 31, 34)
+
+[node name="TrunkTree" type="Sprite2D" parent="." unique_id=761657665]
+position = Vector2(-15, 0)
+texture = ExtResource("1_tem7l")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 34, 31, 15)

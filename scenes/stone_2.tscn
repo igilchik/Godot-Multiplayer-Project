@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://be3u3ob80me8v"]
+
+[ext_resource type="Texture2D" uid="uid://ujiuf6g7fyce" path="res://Sprites/World/3stone.png" id="1_wgful"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wgful"]
+size = Vector2(11, 4)
+
+[node name="stone2" type="Node2D" unique_id=776332281]
+
+[node name="Stone" type="StaticBody2D" parent="." unique_id=223291869]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stone" unique_id=1416239771]
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_wgful")
+
+[node name="StoneTop" type="Sprite2D" parent="." unique_id=1670553202]
+z_index = 10
+position = Vector2(-8, -10)
+texture = ExtResource("1_wgful")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 1, 17, 10)
+
+[node name="StoneDown" type="Sprite2D" parent="." unique_id=104307030]
+position = Vector2(-8, 0)
+texture = ExtResource("1_wgful")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 11, 17, 7)

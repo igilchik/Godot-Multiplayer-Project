@@ -1,0 +1,326 @@
+[gd_scene format=3 uid="uid://dfyw1x51wmc0d"]
+
+[ext_resource type="Script" uid="uid://candglsb8uccm" path="res://scripts/game_bounds.gd" id="1_gee14"]
+[ext_resource type="PackedScene" uid="uid://rqr6abr0m4q2" path="res://scenes/world.tscn" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://d1rgw02a5ks1n" path="res://scenes/player.tscn" id="2_lnu2h"]
+[ext_resource type="Script" uid="uid://dvh67r1uu0wq1" path="res://scripts/ui.gd" id="3_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://cotmd35hduusw" path="res://Sprites/UI/helth bar.png" id="3_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://i3qqab7qjrsh" path="res://Sprites/World/spinning_coin/coin1.png" id="5_p57ef"]
+[ext_resource type="FontFile" uid="uid://skj5qq5lnxw4" path="res://font/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf" id="7_u5sy4"]
+[ext_resource type="Texture2D" uid="uid://64bhokmd3xau" path="res://Sprites/Weapon/Sword.png" id="8_gee14"]
+[ext_resource type="Script" uid="uid://e2ssm3jvjbcg" path="res://scripts/ui/end_match_ui.gd" id="9_vtaks"]
+[ext_resource type="Script" uid="uid://8cieltobrjkh" path="res://scripts/match_manager.gd" id="10_kvpfn"]
+[ext_resource type="Script" uid="uid://c0bx1lxy14v0y" path="res://scripts/spawn_manager.gd" id="11_kvpfn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbhrr"]
+atlas = ExtResource("3_lnu2h")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iywne"]
+atlas = ExtResource("3_lnu2h")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p57ef"]
+atlas = ExtResource("3_lnu2h")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5sy4"]
+atlas = ExtResource("3_lnu2h")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gee14"]
+atlas = ExtResource("3_lnu2h")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0tnpc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbhrr")
+}],
+"loop": true,
+"name": &"0hp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iywne")
+}],
+"loop": true,
+"name": &"1hp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p57ef")
+}],
+"loop": true,
+"name": &"2hp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5sy4")
+}],
+"loop": true,
+"name": &"3hp",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gee14")
+}],
+"loop": true,
+"name": &"4hp",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p57ef"]
+font = ExtResource("7_u5sy4")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_gee14"]
+font = ExtResource("7_u5sy4")
+font_size = 50
+
+[sub_resource type="LabelSettings" id="LabelSettings_0tnpc"]
+font = ExtResource("7_u5sy4")
+font_size = 35
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gee14"]
+bg_color = Color(0.9529412, 0.9411765, 0.9019608, 1)
+shadow_color = Color(0, 0, 0, 0.49803922)
+shadow_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_vtaks"]
+font = ExtResource("7_u5sy4")
+font_size = 90
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kvpfn"]
+font = ExtResource("7_u5sy4")
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dinhu"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kvuet"]
+font = ExtResource("7_u5sy4")
+font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_trtic"]
+font = ExtResource("7_u5sy4")
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[node name="Game" type="Node2D" unique_id=1411747495]
+script = ExtResource("1_gee14")
+
+[node name="world" parent="." unique_id=1704668848 instance=ExtResource("1_yqjtg")]
+
+[node name="MatchManager" type="Node2D" parent="." unique_id=2116972295]
+script = ExtResource("10_kvpfn")
+
+[node name="Players" type="Node2D" parent="." unique_id=169880432]
+
+[node name="SpawnManager" type="Node2D" parent="." unique_id=1728012881]
+script = ExtResource("11_kvpfn")
+player_scene = ExtResource("2_lnu2h")
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=1056883319]
+
+[node name="Spawn1" type="Marker2D" parent="SpawnPoints" unique_id=2006469677]
+position = Vector2(-571, -479)
+
+[node name="Spawn2" type="Marker2D" parent="SpawnPoints" unique_id=1515048234]
+position = Vector2(604, -492)
+
+[node name="Spawn3" type="Marker2D" parent="SpawnPoints" unique_id=2025363460]
+position = Vector2(-590, 448)
+
+[node name="Spawn4" type="Marker2D" parent="SpawnPoints" unique_id=838540163]
+position = Vector2(537, 455)
+
+[node name="UI_Layer" type="CanvasLayer" parent="." unique_id=1924823173]
+
+[node name="Screen" type="Control" parent="UI_Layer" unique_id=896816485]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UI" type="Control" parent="UI_Layer/Screen" unique_id=1415646364]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 4.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_lbhrr")
+
+[node name="Hearts" type="AnimatedSprite2D" parent="UI_Layer/Screen/UI" unique_id=1743042063]
+z_index = 100
+position = Vector2(1772.1251, 115.75)
+scale = Vector2(9.67968, 9.140624)
+sprite_frames = SubResource("SpriteFrames_0tnpc")
+animation = &"4hp"
+
+[node name="CoinHUD" type="HBoxContainer" parent="UI_Layer/Screen/UI" unique_id=1665506446]
+layout_mode = 0
+offset_left = 1698.0
+offset_top = 94.0
+offset_right = 1878.0
+offset_bottom = 217.0
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="CoinIcon" type="Sprite2D" parent="UI_Layer/Screen/UI/CoinHUD" unique_id=161832964]
+position = Vector2(155, 63.53)
+scale = Vector2(2.8125038, 3.0468755)
+texture = ExtResource("5_p57ef")
+
+[node name="CoinLabel" type="Label" parent="UI_Layer/Screen/UI/CoinHUD" unique_id=1340830485]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_p57ef")
+
+[node name="SwordHUD" type="Control" parent="UI_Layer/Screen/UI" unique_id=1806574273]
+anchors_preset = 0
+offset_left = 1636.0
+offset_top = 933.0
+offset_right = 1921.0
+offset_bottom = 1077.0
+
+[node name="SwordText" type="Label" parent="UI_Layer/Screen/UI/SwordHUD" unique_id=615932176]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 41.93
+offset_right = 143.0
+offset_bottom = 91.92998
+text = "0"
+label_settings = SubResource("LabelSettings_gee14")
+
+[node name="SwordButton" type="TextureButton" parent="UI_Layer/Screen/UI/SwordHUD" unique_id=1976027215]
+layout_mode = 0
+offset_left = 153.99998
+offset_top = 25.999998
+offset_right = 171.99998
+offset_bottom = 42.0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("8_gee14")
+
+[node name="HintLabel" type="Label" parent="UI_Layer/Screen/UI" unique_id=195403814]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.98600006
+anchor_right = 0.49800003
+anchor_bottom = 0.98600006
+offset_left = -266.90204
+offset_top = -23.020996
+offset_right = 268.09796
+offset_bottom = 23.979004
+grow_horizontal = 2
+grow_vertical = 0
+label_settings = SubResource("LabelSettings_0tnpc")
+horizontal_alignment = 1
+
+[node name="EndMatchPanel" type="Control" parent="UI_Layer/Screen" unique_id=1921884478]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_vtaks")
+
+[node name="ResultCard" type="Panel" parent="UI_Layer/Screen/EndMatchPanel" unique_id=1926378231]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -398.0
+offset_top = -235.0
+offset_right = 402.0
+offset_bottom = 265.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gee14")
+
+[node name="Layout" type="VBoxContainer" parent="UI_Layer/Screen/EndMatchPanel/ResultCard" unique_id=793190885]
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 500.0
+theme_override_constants/separation = -10
+
+[node name="Title" type="Label" parent="UI_Layer/Screen/EndMatchPanel/ResultCard/Layout" unique_id=1783750252]
+layout_mode = 2
+text = "MATCH OVER
+"
+label_settings = SubResource("LabelSettings_vtaks")
+horizontal_alignment = 1
+
+[node name="WinnerPadding" type="MarginContainer" parent="UI_Layer/Screen/EndMatchPanel/ResultCard/Layout" unique_id=1789910570]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+
+[node name="WinnerRow" type="HBoxContainer" parent="UI_Layer/Screen/EndMatchPanel/ResultCard/Layout/WinnerPadding" unique_id=1766319454]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="WinnerLabel" type="Label" parent="UI_Layer/Screen/EndMatchPanel/ResultCard/Layout/WinnerPadding/WinnerRow" unique_id=1320795195]
+layout_mode = 2
+text = "WINNER: "
+label_settings = SubResource("LabelSettings_kvpfn")
+
+[node name="WinnerValue" type="Label" parent="UI_Layer/Screen/EndMatchPanel/ResultCard/Layout/WinnerPadding/WinnerRow" unique_id=236660092]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_dinhu")
+
+[node name="CoinsPadding" type="MarginContainer" parent="UI_Layer/Screen/EndMatchPanel/ResultCard/Layout" unique_id=854556329]
+layout_mode = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 40
+
+[node name="CoinsRow" type="HBoxContainer" parent="UI_Layer/Screen/EndMatchPanel/ResultCard/Layout/CoinsPadding" unique_id=1842312236]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="CoinsLabel" type="Label" parent="UI_Layer/Screen/EndMatchPanel/ResultCard/Layout/CoinsPadding/CoinsRow" unique_id=1132373171]
+layout_mode = 2
+text = "COINS: "
+label_settings = SubResource("LabelSettings_kvuet")
+
+[node name="CoinsValue" type="Label" parent="UI_Layer/Screen/EndMatchPanel/ResultCard/Layout/CoinsPadding/CoinsRow" unique_id=1620980138]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_trtic")
+
+[node name="ButtonsPadding" type="MarginContainer" parent="UI_Layer/Screen/EndMatchPanel/ResultCard/Layout" unique_id=1065772894]
+layout_mode = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 120
+
+[node name="ButtonsRow" type="HBoxContainer" parent="UI_Layer/Screen/EndMatchPanel/ResultCard/Layout/ButtonsPadding" unique_id=1566773688]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="RematchButton" type="Button" parent="UI_Layer/Screen/EndMatchPanel/ResultCard/Layout/ButtonsPadding/ButtonsRow" unique_id=1391242310]
+custom_minimum_size = Vector2(220, 55)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "REMATCH"
+
+[node name="MainMenuButton" type="Button" parent="UI_Layer/Screen/EndMatchPanel/ResultCard/Layout/ButtonsPadding/ButtonsRow" unique_id=1895125591]
+custom_minimum_size = Vector2(220, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "MAIN MENU"

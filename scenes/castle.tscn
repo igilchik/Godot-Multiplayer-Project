@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://chrs5mim0ty5c"]
+
+[ext_resource type="Texture2D" uid="uid://cb0uf2sbtlo7s" path="res://Sprites/World/castle.png" id="1_bly62"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ysgy"]
+size = Vector2(126, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjj26"]
+size = Vector2(29, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njhjj"]
+size = Vector2(29, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxdab"]
+size = Vector2(29, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7pkwf"]
+size = Vector2(29, 29)
+
+[node name="castle" type="Node2D" unique_id=1873180613]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=882865072]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1332948225]
+shape = SubResource("RectangleShape2D_0ysgy")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=769685320]
+position = Vector2(-60.5, 60.5)
+shape = SubResource("RectangleShape2D_rjj26")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=1564675023]
+position = Vector2(60.5, 60.5)
+shape = SubResource("RectangleShape2D_njhjj")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1919904584]
+position = Vector2(60.5, -60.5)
+shape = SubResource("RectangleShape2D_jxdab")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D" unique_id=1637371161]
+position = Vector2(-60.5, -60.5)
+shape = SubResource("RectangleShape2D_7pkwf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=742536877]
+texture = ExtResource("1_bly62")
